@@ -1,23 +1,31 @@
 import React, { useEffect, useRef } from 'react';
 
 function SlidingChips() {
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null); // Explicitly type the ref
 
   useEffect(() => {
     const slide = () => {
       if (sliderRef.current) {
-        const firstChip = sliderRef.current.firstChild as HTMLElement;
+        const firstChip = sliderRef.current.firstChild as HTMLElement; // Type assertion to ensure it's an HTMLElement
         const chipWidth = firstChip.clientWidth;
+
+        // Move the first chip to the end of the list
         sliderRef.current.appendChild(firstChip);
+
+        // Adjust the left position
         sliderRef.current.style.transition = 'none';
         sliderRef.current.style.transform = `translateX(-${chipWidth}px)`;
-        sliderRef.current.offsetHeight;
+
+        // Trigger a reflow to reset the transition
+        void sliderRef.current.offsetHeight; // Corrected to trigger reflow
+
+        // Move back to the start smoothly
         sliderRef.current.style.transition = 'transform 0.9s ease';
         sliderRef.current.style.transform = 'translateX(0)';
       }
     };
 
-    const interval = setInterval(slide, 2000);
+    const interval = setInterval(slide, 2000); // Slide every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
