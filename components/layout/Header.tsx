@@ -40,7 +40,7 @@ export default function Header() {
                 </div>
 
                 <div>
-                    <button className="px-4 py-1 bg-white text-[#4A77FF] font-bold rounded-md hover:bg-[#4A77FF]">
+                    <button className="px-4 py-1 bg-white text-[#4A77FF] font-bold rounded-md hover:bg-[#4A77FF] hover:text-white">
                         문의하기
                     </button>
                 </div>
