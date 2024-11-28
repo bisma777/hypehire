@@ -38,7 +38,8 @@ const cardsData = [
 
 function Cards() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
 
   const nextCard = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % cardsData.length);
@@ -48,7 +49,7 @@ function Cards() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + cardsData.length) % cardsData.length);
   };
 
-  const handleHover = (index: any) => {
+  const handleHover = (index: number) => {
     setHoveredIndex(index);
   };
 
