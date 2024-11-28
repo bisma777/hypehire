@@ -27,7 +27,7 @@ function Banner() {
 
                     <TooltipProvider>
                         <Tooltip>
-                            <TooltipTrigger> <h1 className={`text-3xl font-bold  text-start w-5/6 transition-opacity transition-transform duration-500 
+                            <TooltipTrigger> <h1 className={`text-3xl font-bold  text-start w-5/6 transition-opacity transition-transform duration-300 
                     ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-5'}`}>
                                 최고의 실력을 가진 외국인 인재를 찾고 계신가요?
                             </h1></TooltipTrigger>
